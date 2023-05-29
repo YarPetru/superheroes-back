@@ -1,7 +1,7 @@
-const Hero = require('../../models/superhero');
+const Hero = require('../../models/hero-model');
 
 const getAll = async (_, response) => {
-  const result = await Hero.find();
+  const result = await Hero.find({}, '-createdAt -updatedAt');
   response.json(result);
 };
 

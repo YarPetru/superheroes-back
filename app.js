@@ -18,6 +18,7 @@ const app = express();
 // const corsMiddleware = cors();
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 // write on file server.log
 app.use(async (request, __, next) => {

@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const { handleMongooseError } = require('../helpers');
 
 const heroSchema = new Schema(
   {
@@ -12,26 +13,32 @@ const heroSchema = new Schema(
     },
     origin_description: {
       type: String,
-      required: false,
+      required: true,
     },
     superpowers: {
       type: String,
-      required: false,
+      required: true,
     },
     catch_phrase: {
       type: String,
-      required: false,
+      required: true,
     },
     images: {
       type: String,
-      required: false,
+      required: true,
     },
+    // images: {
+    //   type: [String],
+    //   required: false,
+    // },
   },
   {
     versionKey: false,
     timestamps: true,
   }
 );
+
+heroSchema.post('save', handleMongooseError);
 
 const Hero = model('superheroe', heroSchema);
 

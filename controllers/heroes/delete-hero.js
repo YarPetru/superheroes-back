@@ -1,4 +1,4 @@
-const Hero = require('../../models/superhero');
+const Hero = require('../../models/hero-model');
 
 const { HttpError } = require('../../helpers');
 
