@@ -25,7 +25,7 @@ const heroSchema = new Schema(
     },
     images: {
       type: String,
-      required: true,
+      required: false,
     },
     // images: {
     //   type: [String],
