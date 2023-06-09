@@ -24,13 +24,9 @@ const heroSchema = new Schema(
       required: true,
     },
     images: {
-      type: String,
+      type: [String],
       required: false,
     },
-    // images: {
-    //   type: [String],
-    //   required: false,
-    // },
   },
   {
     versionKey: false,
