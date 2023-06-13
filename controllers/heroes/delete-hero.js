@@ -8,7 +8,6 @@ const deleteHero = async (request, response) => {
   if (!result) {
     throw HttpError(404, 'Not found');
   }
-  // response.status(204).send()
   response.json({
     message: 'Delete success',
   });
